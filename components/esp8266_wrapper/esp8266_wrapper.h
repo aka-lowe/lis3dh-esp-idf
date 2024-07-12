@@ -17,6 +17,7 @@ extern "C" {
 
 #include "driver/uart.h"
 #include "driver/spi_common.h"
+#include "driver/gpio.h"
 
 /*
  * esp-open-rtos SDK function wrapper 
@@ -103,7 +104,9 @@ size_t spi_transfer_pf(uint8_t bus, uint8_t cs,
  * freertos api wrapper
  */
 
-#define QueueHandle_t xQueueHandle
+// #define QueueHandle_t xQueueHandle
+
+#define portTICK_RATE_MS portTICK_PERIOD_MS
 
 #ifdef __cplusplus
 }
