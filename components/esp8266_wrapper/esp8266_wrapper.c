@@ -35,6 +35,9 @@ esp_err_t gpio_set_interrupt(gpio_num_t gpio,
     if (!gpio_isr_service_installed)
         gpio_isr_service_installed = (gpio_install_isr_service(0) == ESP_OK);
 
+
+
+
     gpio_config_t gpio_cfg = {
        .pin_bit_mask = ((uint64_t)(((uint64_t)1)<< gpio)),
        .mode = GPIO_MODE_INPUT,
